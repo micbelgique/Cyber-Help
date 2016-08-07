@@ -1,0 +1,72 @@
+﻿@{
+    ViewData["Title"] = "Alerts";
+}
+
+@model IEnumerable<SummerCamp.CyberHelp.Website.Models.Alert>
+
+<div class="container">
+    <!-- Basic -->
+    <div class="block-header">
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    Alerts list
+                    <small></small>
+                </h2>
+            </div>
+
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Type</th>
+                            <th>Commentaire</th>
+                            <th>Statut</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var alert in Model)
+                        {
+                            <tr class="@alert.StatusLineClass">
+                                <td>@alert.CyberAlertType</td>
+                                <td>@alert.Comment</td>
+                                <td>@alert.StatusDescription</td>
+                                <td>@alert.RecordedDate.ToLocalTime()</td>
+                                <td>
+                                    <a asp-action="info" asp-route-id="@alert.CyberAlertID" class="btn btn-info  btn-xs waves-effect">
+                                        Info
+                                    </a>
+                                </td>
+                                <td>
+                                    @if (alert.CanValidate)
+                                    {
+                                        <a asp-action="validate" asp-route-id="@alert.CyberAlertID" class="btn btn-warning btn-xs waves-effect">
+                                            Valider
+                                        </a>
+                                    }
+                                    @if (alert.CanOrganizeMeeting)
+                                    {
+                                        <a asp-action="organizeMeeting" asp-route-id="@alert.CyberAlertID" class="btn btn-success btn-xs waves-effect">
+                                            Organiser une réunion
+                                        </a>
+                                    }
+                                </td>
+                                <td>
+                                    @if (alert.CanOrganizeMeeting)
+                                    {
+                                    <a asp-action="createOutlook" asp-route-id="@alert.Comment" class="btn btn-success btn-xs waves-effect">
+                                        Créer dans outlook
+                                    </a>
+                                    }
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

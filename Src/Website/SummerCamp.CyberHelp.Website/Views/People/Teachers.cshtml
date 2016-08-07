@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Students";
+}
+
+@model IEnumerable<SummerCamp.CyberHelp.DataServices.Models.Student>
+
+<div class="container">
+    <!-- Basic -->
+    <div class="block-header">
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    Student list
+                    <small></small>
+                </h2>
+            </div>
+
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Ecole</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var student in Model)
+                        {
+                            <tr>
+                                <td>@student.FirstName @student.LastName</td>
+                                <td>@student.ClassRoom.ClassRoomName <br /> <small>@student.ClassRoom.SchoolName</small>   </td>
+                                <td>@student.CyberHelpYear</td>
+                                <td><a asp-action="profil" class="btn bgm-cyan waves-effect">Profil</a></td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

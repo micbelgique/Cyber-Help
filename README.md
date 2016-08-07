@@ -16,3 +16,14 @@ The team is composed by
 * Denis Voiturons (.NET Solution Architect | Microsoft MVP)
 * Michael Fiorito (.NET Developper & Project Analyst)
 * Stephane Houtteman (.NET Developper)
+
+## Team composition
+
+First, create a Azure SQL Database and an Azure Notification Service.
+
+Next, open the solution SummerCamp.CyberHelp.sql and update the files:
+
+* Src\Mobile\Droid\Constants.cs file with your correct [YOUR_KEY] for notification services.
+* Src\Services\SummerCamp.CyberHelp.DataServices\Factory.cs file with your correct [CONNECTION_STRING]
+
+

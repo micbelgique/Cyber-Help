@@ -1,0 +1,50 @@
+﻿@{
+    ViewData["Title"] = "Schools";
+}
+
+@model IEnumerable<SummerCamp.CyberHelp.DataServices.Models.School>
+
+<div class="container">
+    <!-- Basic -->
+    <div class="block-header">
+        <div class="card">
+            <div class="card-header">
+                <h2>
+                    School list
+                    <small></small>
+                </h2>
+            </div>
+
+            <div class="card-body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var school in Model)
+                        {
+                            <tr>
+                                <td>@school.SchoolName</td>
+                                <td>
+                                    <a asp-action="index" asp-controller="classrooms" asp-route-schoolid="@school.SchoolID" class="btn btn-success btn-xs waves-effect">
+                                        Voir les classes
+                                    </a>
+                                    <a asp-action="students" asp-controller="people" asp-route-id="@school.SchoolID"  asp-route-filterBySchool="true" class="btn bgm-lightblue btn-xs waves-effect">
+                                        Voir les élèves
+                                    </a>
+                                    <a asp-action="teachers" asp-controller="people" asp-route-id="@school.SchoolID"  asp-route-filterBySchool="true" class="btn bgm-indigo btn-xs waves-effect">
+                                        Voir les professeurs
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>

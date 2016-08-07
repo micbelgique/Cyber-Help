@@ -1,0 +1,27 @@
+{
+  "title": "SummerCamp.CyberHelp.DataServices",
+  "copyright": "MICSC 16",
+  "language": "en",
+  "version": "1.0.0",
+
+  "dependencies": {
+    "Microsoft.NETCore.App": {
+      "version": "1.0.0",
+      "type": "platform"
+    },
+    "NETStandard.Library": "1.6.0",
+    "SqlDataBaseCommand.Common": "1.6.1",
+    "System.Data.Common": "4.1.0",
+    "System.Data.SqlClient": "4.1.0"
+
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [
+        "dotnet5.6",
+        "portable-net45+win8"
+      ]
+    }
+  }
+}
+

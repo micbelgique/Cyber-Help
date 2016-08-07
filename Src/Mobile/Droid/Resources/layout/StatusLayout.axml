@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:text="Vos demandes sont..."
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblInfo"
+        android:layout_marginBottom="80px" />
+    <ListView
+        android:layout_above="@+id/lblLoading"
+        android:layout_below="@+id/lblInfo"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lstAllAlerts" />
+    <TextView
+        android:text="Chargement en cours..."
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblLoading"
+        android:layout_above="@+id/btnOK"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="17dp" />
+    <Button
+        android:text="Rafraichir"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:id="@+id/btnOK" />
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:layout_above="@id/lblLoading"
+        android:id="@+id/Separator" />
+</RelativeLayout>

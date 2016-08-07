@@ -1,0 +1,146 @@
+﻿@model SummerCamp.CyberHelp.Website.Models.Classroom
+
+<div class="container container-alt">
+
+    <div class="block-header">
+        <h2>
+            @Model.ClassroomInfo.ClassRoomName
+            <small>Ecole @Model.ClassroomInfo.SchoolName</small>
+        </h2>
+
+    </div>
+
+    <div class="card" id="profile-main">
+        <div class="pm-overview c-overflow mCustomScrollbar _mCS_3 mCS-autoHide" style="overflow: visible;">
+            <div id="mCSB_3" class="mCustomScrollBox mCS-minimal-dark mCSB_vertical_horizontal mCSB_outside" style="max-height: none;" tabindex="0">
+                <div id="mCSB_3_container" class="mCSB_container mCS_x_hidden mCS_no_scrollbar_x" style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
+
+                    <div class="pmo-pic">
+                        <div class="p-relative">
+                            <a href="">
+                                <img class="img-responsive mCS_img_loaded" src="img/profile-pics/profile-pic-2.jpg" alt="">
+                            </a>
+                        </div>
+
+
+                        <div class="pmo-stat">
+                            <h2 class="m-0 c-white">@Model.Alerts.Count()</h2>
+                            Total d'alertes
+                        </div>
+                    </div>
+
+                    <div class="pmo-block pmo-contact hidden-xs">
+                        <h2>Professeur</h2>
+
+                        <ul>
+                            <li><i class="zmdi zdmi-contact"></i> @Model.Teacher.FirstName @Model.Teacher.LastName</li>
+                        </ul>
+                    </div>
+
+                    <div class="pmo-block pmo-items hidden-xs">
+                        <h2>Connections</h2>
+
+                        <div class="pmob-body">
+                            <div class="row">
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/1.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/2.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/3.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/4.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/5.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/6.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/7.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/8.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/1.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/2.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/3.jpg" alt="">
+                                </a>
+                                <a href="" class="col-xs-2">
+                                    <img class="img-circle mCS_img_loaded" src="img/profile-pics/4.jpg" alt="">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><div id="mCSB_3_scrollbar_vertical" class="mCSB_scrollTools mCSB_3_scrollbar mCS-minimal-dark mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_3_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 50px; display: block; height: 587px; max-height: 695px; top: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar" style="line-height: 50px;"></div></div><div class="mCSB_draggerRail"></div></div></div><div id="mCSB_3_scrollbar_horizontal" class="mCSB_scrollTools mCSB_3_scrollbar mCS-minimal-dark mCSB_scrollTools_horizontal" style="display: none;"><div class="mCSB_draggerContainer"><div id="mCSB_3_dragger_horizontal" class="mCSB_dragger" style="position: absolute; min-width: 50px; width: 0px; left: 0px;" oncontextmenu="return false;"><div class="mCSB_dragger_bar"></div></div><div class="mCSB_draggerRail"></div></div></div>
+        </div>
+
+        <div class="pm-body clearfix">
+            <div role="tabpanel" class="tab">
+                <ul class="tab-nav" role="tablist">
+                    <li class="active"><a href="#home9" aria-controls="home9" role="tab" data-toggle="tab" aria-expanded="true">Home</a></li>
+                    <li role="presentation" class=""><a href="#profile9" aria-controls="profile9" role="tab" data-toggle="tab" aria-expanded="false">Profile</a></li>
+                    <li role="presentation"><a href="#messages9" aria-controls="messages9" role="tab" data-toggle="tab">Messages</a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div role="tabpanel" class="tab-pane animated fadeInRight active" id="home9">
+                        <div class="contacts clearfix row">
+                            <div class="col-md-2 col-sm-4 col-xs-6">
+
+                                @{ var rnd = new Random();}
+                                @foreach (var student in Model.Students)
+                                {
+                                    int pictureNumber = rnd.Next(1, 16);
+
+                                    <div class="c-item">
+                                        <a href="" class="ci-avatar">
+                                            <img src="img/contacts/@pictureNumber\.jpg" alt="">
+                                        </a>
+
+                                        <div class="c-info">
+                                            <strong>@student.FirstName - @student.LastName</strong>
+                                            <small>@student.CyberHelpYear</small>
+                                        </div>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div role="tabpanel" class="tab-pane animated fadeInRight" id="profile9">
+                        <p>
+                            Morbi mattis ullamcorper velit. Etiam rhoncus. Phasellus leo dolor,
+                            tempus non, auctor et, hendrerit quis, nisi. Cras id dui. Curabitur
+                            turpis.
+                            Etiam ut purus mattis mauris sodales aliquam. Aenean viverra rhoncus
+                            pede. Nulla sit amet est. Donec mi odio, faucibus.
+                        </p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane animated fadeInRight" id="messages9">
+                        <p>
+                            Etiam rhoncus. Phasellus leo dolor, tempus non, auctor et, hendrerit
+                            quis, nisi. Cras id dui. Curabitur turpis.
+                            Etiam ut purus mattis mauris sodales aliquam. Aenean viverra rhoncus
+                            pede. Nulla sit amet est. Donec mi odio, faucibus at, scelerisque
+                            quis, convallis in, nisi. Praesent ac sem eget est egestas
+                            volutpat.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
