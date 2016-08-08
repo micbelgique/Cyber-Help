@@ -1,17 +1,17 @@
 ﻿<ul class="main-menu">
-    <li class="active">
-        <a asp-controller="Home" asp-action="index"><i class="zmdi zmdi-home"></i> Home</a>
+    <li>
+        <a asp-controller="Home" asp-action="index"><i class="zmdi zmdi-home"></i> Dashboard</a>
     </li>
-    <li><a asp-controller="Alerts" asp-action="index"><i class="zmdi zmdi-notifications"></i> Alerts</a></li>
-    <li><a asp-controller="Statistics" asp-action="index"><i class="zmdi zmdi-chart"></i> Statistics</a></li>
-    <li><a asp-controller="Classrooms" asp-action="index"><i class="zmdi zmdi-city"></i> Classrooms</a></li>
-    <li><a asp-controller="Schools" asp-action="index"><i class="zmdi zmdi-city-alt"></i> Schools</a></li>
-    
-    <li class="sub-menu">
-        <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-assignment-account"></i> People</a>
-        <ul>
-            <li><a asp-controller="Students" asp-action="index">Students</a></li>
-            <li><a asp-controller="Teachers" asp-action="index">Teachers</a></li>
-        </ul>
-    </li>
+    <li><a asp-controller="Alerts" asp-action="index"><i class="zmdi zmdi-notifications"></i> Alertes</a></li>
+    <li><a asp-controller="Statistics" asp-action="index"><i class="zmdi zmdi-chart"></i> Statistiques</a></li>
+    <li><a asp-controller="Classrooms" asp-action="index"><i class="zmdi zmdi-city"></i> Classes</a></li>
+    <li><a asp-controller="Schools" asp-action="index"><i class="zmdi zmdi-city-alt"></i> Ecoles</a></li>
+
+    @*<li class="sub-menu">
+            <a href="" data-ma-action="submenu-toggle"><i class="zmdi zmdi-assignment-account"></i> Personnes</a>
+            <ul>
+                <li><a asp-controller="Students" asp-action="index">Etudiant</a></li>
+                <li><a asp-controller="Teachers" asp-action="index">Professeur</a></li>
+            </ul>
+        </li>*@
 </ul>

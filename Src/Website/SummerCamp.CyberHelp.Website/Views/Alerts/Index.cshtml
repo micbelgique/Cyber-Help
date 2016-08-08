@@ -34,11 +34,11 @@
                                 <td>@alert.Comment</td>
                                 <td>@alert.StatusDescription</td>
                                 <td>@alert.RecordedDate.ToLocalTime()</td>
-                                <td>
+                                @*<td>
                                     <a asp-action="info" asp-route-id="@alert.CyberAlertID" class="btn btn-info  btn-xs waves-effect">
                                         Info
                                     </a>
-                                </td>
+                                </td>*@
                                 <td>
                                     @if (alert.CanValidate)
                                     {
@@ -48,15 +48,7 @@
                                     }
                                     @if (alert.CanOrganizeMeeting)
                                     {
-                                        <a asp-action="organizeMeeting" asp-route-id="@alert.CyberAlertID" class="btn btn-success btn-xs waves-effect">
-                                            Organiser une réunion
-                                        </a>
-                                    }
-                                </td>
-                                <td>
-                                    @if (alert.CanOrganizeMeeting)
-                                    {
-                                    <a asp-action="createOutlook" asp-route-id="@alert.Comment" class="btn btn-success btn-xs waves-effect">
+                                    <a asp-action="createOutlook" asp-route-comment="@alert.Comment" asp-route-id="@alert.CyberAlertID" class="btn btn-success btn-xs waves-effect">
                                         Créer dans outlook
                                     </a>
                                     }

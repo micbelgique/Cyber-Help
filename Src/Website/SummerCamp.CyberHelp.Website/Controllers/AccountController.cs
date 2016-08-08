@@ -8,18 +8,12 @@ using SummerCamp.CyberHelp.DataServices.Models;
 
 namespace SummerCamp.CyberHelp.Website.Controllers
 {
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         // GET: /<controller>/
         public IActionResult Index()
         {
-            //var schools = _factory.GetSchools();
-            var schools = new List<School>()
-            {
-                new School() {SchoolID = 1, SchoolName = "Athenee Royal de Mons" },
-                new School() {SchoolID = 2, SchoolName = "Université de Mons" },
-                new School() {SchoolID = 2, SchoolName = "Ecole alternative de Mons" }
-            };
+            var schools = _factory.GetSchools().ToList() ;
             return View(schools);
         }
 

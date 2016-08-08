@@ -30,7 +30,7 @@
             </li>
 
             <li class="hi-logo hidden-xs">
-                <a href="index.html"><img src="~/img/cyberhelpLogo.png" height="40" width="218" /></a>
+                <a href="index.html"><img src="~/img/cyberhelpLogo.png" style="height: 33px; top: 15px; position: absolute;" /></a>
             </li>
 
             <li class="pull-right">
@@ -40,7 +40,7 @@
                         <a href=""><i class="him-icon zmdi zmdi-search"></i></a>
                     </li>
 
-                    <li class="dropdown">
+                    @*<li class="dropdown">
                         <a data-toggle="dropdown" href="">
                             <i class="him-icon zmdi zmdi-email"></i>
                             <i class="him-counts">6</i>
@@ -261,7 +261,7 @@
                     </li>
                     <li class="hidden-xs ma-trigger" data-ma-action="sidebar-open" data-ma-target="#chat">
                         <a href=""><i class="him-icon zmdi zmdi-comment-alt-text"></i></a>
-                    </li>
+                    </li>*@
                 </ul>
             </li>
         </ul>
@@ -392,15 +392,17 @@
     </section>
 
     <footer id="footer">
-        Copyright &copy; 2015 Material Admin
+        Copyright &copy; 2016 MIC SummerCamp 
 
         <ul class="f-menu">
-            <li><a href="">Home</a></li>
-            <li><a href="">Dashboard</a></li>
-            <li><a href="">Reports</a></li>
-            <li><a href="">Support</a></li>
-            <li><a href="">Contact</a></li>
-        </ul>
+        <li>
+            <a asp-controller="Home" asp-action="index"><i class="zmdi zmdi-home"></i> Dashboard</a>
+        </li>
+        <li><a asp-controller="Alerts" asp-action="index"><i class="zmdi zmdi-notifications"></i> Alertes</a></li>
+        <li><a asp-controller="Statistics" asp-action="index"><i class="zmdi zmdi-chart"></i> Statistiques</a></li>
+        <li><a asp-controller="Classrooms" asp-action="index"><i class="zmdi zmdi-city"></i> Classes</a></li>
+        <li><a asp-controller="Schools" asp-action="index"><i class="zmdi zmdi-city-alt"></i> Ecoles</a></li>
+</ul>
     </footer>
 
     <!-- Page Loader -->

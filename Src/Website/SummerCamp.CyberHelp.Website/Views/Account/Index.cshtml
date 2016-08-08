@@ -9,7 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Material Admin</title>
+    <title>CyberHelp</title>
     <link href="~/lib/fullcalendar/dist/fullcalendar.min.css" rel="stylesheet">
     <link href="~/lib/animate.css/animate.min.css" rel="stylesheet">
     <link href="~/lib/sweetalert/dist/sweetalert.css" rel="stylesheet">
@@ -24,20 +24,23 @@
 
 <body>
     <div class="login-content">
+        <div style="position:fixed; transform: rotate(-26deg); top: 60px;">
+            <img src="~/img/cyberhelpLogo.png" style="width: 20vw;" alt="" />
+        </div>
         <!-- Login -->
         <div class="lc-block toggled" id="l-login">
             <div class="lcb-form">
                 <div class="input-group m-b-20">
                     <span class="input-group-addon"><i class="zmdi zmdi-account"></i></span>
                     <div class="fg-line">
-                        <input type="text" class="form-control" placeholder="Utilisateur">
+                        <input type="text" class="form-control" value="denis" placeholder="Utilisateur">
                     </div>
                 </div>
 
                 <div class="input-group m-b-20">
                     <span class="input-group-addon"><i class="zmdi zmdi-male"></i></span>
                     <div class="fg-line">
-                        <input type="password" class="form-control" placeholder="Mot de passe">
+                        <input type="password" class="form-control" value="denis" placeholder="Mot de passe">
                     </div>
                 </div>
 
@@ -61,7 +64,9 @@
                     </label>
                 </div>
 
-                <a href="" class="btn btn-login btn-success btn-float waves-effect waves-circle waves-float"><i class="zmdi zmdi-arrow-forward"></i></a>
+                <a asp-action="index" asp-controller="home" class="btn btn-login btn-success btn-float waves-effect waves-circle waves-float">
+                    <i class="zmdi zmdi-arrow-forward" style="margin-top: 6px;"></i>
+                </a>
             </div>
 
         </div>

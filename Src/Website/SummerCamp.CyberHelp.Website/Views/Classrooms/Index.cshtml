@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Classrooms";
+    ViewData["Title"] = "Ecoles";
 }
 
 @model IEnumerable<SummerCamp.CyberHelp.DataServices.Models.ClassRoom>
@@ -10,7 +10,7 @@
         <div class="card">
             <div class="card-header">
                 <h2>
-                    Classroom
+                    Classes
                     <small></small>
                 </h2>
             </div>
@@ -31,12 +31,15 @@
                                 <td>@classroom.ClassRoomName</td>
                                 <td>@classroom.SchoolName</td>
                                 <td>
-                                    <a asp-action="students" asp-controller="people" asp-route-id="@classroom.ClassRoomID" asp-route-filterBySchool="false" class="btn bgm-lightblue btn-xs waves-effect">
+                                    <a asp-action="info" asp-controller="classrooms" asp-route-id="@classroom.ClassRoomID" class="btn bgm-teal btn-xs waves-effect">
+                                        Détails
+                                    </a>
+                                    @*<a asp-action="students" asp-controller="people" asp-route-id="@classroom.ClassRoomID" asp-route-filterBySchool="false" class="btn bgm-lightblue btn-xs waves-effect">
                                         Voir les élèves
                                     </a>
                                     <a asp-action="teachers" asp-controller="people" asp-route-id="@classroom.ClassRoomID" asp-route-filterBySchool="false" class="btn bgm-indigo btn-xs waves-effect">
-                                        Voir les professeurs
-                                    </a>
+                                        Voir le professeur
+                                    </a>*@
                                 </td>
                             </tr>
                         }

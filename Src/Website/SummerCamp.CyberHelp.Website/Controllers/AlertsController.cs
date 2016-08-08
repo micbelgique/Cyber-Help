@@ -52,7 +52,7 @@ namespace SummerCamp.CyberHelp.Website.Controllers
         /// <param name="downloadFileName">Name of the download file to return.</param>
         /// <param name="evt">The Event.</param>
         /// <returns>The .ics file.</returns>
-        public ActionResult createOutlook(string Comment)
+        public ActionResult createOutlook(long id, string Comment)
         {
             var icalStringbuilder = new StringBuilder();
 
@@ -83,7 +83,7 @@ namespace SummerCamp.CyberHelp.Website.Controllers
             icalStringbuilder.AppendLine("END:VCALENDAR");
 
             var bytes = Encoding.UTF8.GetBytes(icalStringbuilder.ToString());
-
+            _factory.ChangeAlertStatus(id, "I");
             return this.File(bytes, "text/calendar", "alerte.ics");
         }
     }
